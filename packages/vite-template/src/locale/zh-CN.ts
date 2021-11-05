@@ -12,4 +12,6 @@ export default {
   'navbar.docs': '文档中心',
   'menu.dashboard.workplace': '工作台',
   'menu.dashboard.monitor': '实时监控',
+  'menu.list.search-table': '查询表格',
+  'menu.list.card': '卡片列表',
 };

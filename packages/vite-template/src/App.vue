@@ -65,10 +65,12 @@ export default defineComponent({
 
 <style>
 #app {
-  font-family: 'Helvetica Neue', -apple-system, BlinkMacSystemFont, PingFang SC, Roboto,
+  /* font-family: 'Helvetica Neue', -apple-system, BlinkMacSystemFont, PingFang SC, Roboto,
     Microsoft YaHei, Source Han Sans SC, Noto Sans CJK SC, Myriad Pro, Hiragino Sans GB,
     Lucida Grande, sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale; */
+  font-family: Inter, -apple-system, BlinkMacSystemFont, PingFang SC, Hiragino Sans GB, noto sans,
+    Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 </style>

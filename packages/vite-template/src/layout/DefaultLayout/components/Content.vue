@@ -22,6 +22,6 @@ export default defineComponent({
 
 <style lang="less" scoped>
 .content {
-  padding: 20px;
+  // padding: 20px;
 }
 </style>

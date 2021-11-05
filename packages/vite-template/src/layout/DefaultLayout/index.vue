@@ -12,7 +12,10 @@
           @collapse="onCollapse"
         >
           <SubMenu v-for="route in menuRoutes" :key="route.path">
-            <template #title><IconApps /> {{ t(route.name) }}</template>
+            <template #title>
+              <component :is="`icon-${route.meta.icon}`" />
+              {{ t(route.name) }}</template
+            >
             <Item
               v-for="subRoute in route.children"
               :key="subRoute.path"
@@ -65,7 +68,7 @@ export default defineComponent({
     const { t } = useI18n();
     const router = useRouter();
 
-    const menuWidth = ref(200);
+    const menuWidth = ref(220);
     const loadingBarRef: Ref<LoadingBarInstance | null> = ref(null);
 
     const menuRoutes: Ref<any> = ref([]);
@@ -74,14 +77,16 @@ export default defineComponent({
     const onMenuClick = (route: RouteRecordRaw) => {
       console.log(route);
       loadingBarRef.value?.loading();
-      router.push(route.path);
+      router.push({
+        name: route.name,
+      });
       setTimeout(() => {
         loadingBarRef.value?.success();
       }, 300);
     };
 
     const onCollapse = (collapse: boolean) => {
-      menuWidth.value = collapse ? 48 : 200;
+      menuWidth.value = collapse ? 48 : 220;
     };
 
     return {
@@ -101,7 +106,6 @@ export default defineComponent({
   height: calc(100vh - 61px);
   width: auto;
   .menu {
-    width: 200;
     height: 100%;
   }
 }

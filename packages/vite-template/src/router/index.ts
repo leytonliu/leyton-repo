@@ -11,7 +11,7 @@ export const routes: Array<RouteRecordRaw> = [
     path: '/dashboard',
     component: DefaultLayout,
     meta: {
-      icon: 'IconDashboard',
+      icon: 'dashboard',
     },
     children: [
       {
@@ -23,6 +23,26 @@ export const routes: Array<RouteRecordRaw> = [
         path: 'monitor',
         name: 'menu.dashboard.monitor',
         component: () => import('@/pages/monitor/index.vue'),
+      },
+    ],
+  },
+  {
+    name: 'menu.list',
+    path: '/list',
+    component: DefaultLayout,
+    meta: {
+      icon: 'list',
+    },
+    children: [
+      {
+        name: 'menu.list.search-table',
+        path: 'search-table',
+        component: () => import('@/pages/search-table/index.vue'),
+      },
+      {
+        name: 'menu.list.card',
+        path: 'card',
+        component: () => import('@/pages/card/index.vue'),
       },
     ],
   },

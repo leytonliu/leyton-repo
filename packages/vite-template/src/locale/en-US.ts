@@ -12,4 +12,6 @@ export default {
   'navbar.docs': 'Docs',
   'menu.dashboard.workplace': 'Workplace',
   'menu.dashboard.monitor': 'Monitor',
+  'menu.list.search-table': 'SearchTable',
+  'menu.list.card': 'Card',
 };
