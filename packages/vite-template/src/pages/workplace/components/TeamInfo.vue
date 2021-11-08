@@ -1,20 +1,42 @@
 <template>
   <Card title="团队动态" :bordered="false" class="team-info">
-    <div v-for="(item, index) in data" :key="index" class="item">
+    <!-- <div v-for="(item, index) in data" :key="index" class="item">
       {{ item.title }}
-    </div>
+    </div> -->
+    <List :data="data" :bordered="false">
+      <template #item="{ item }">
+        <Item>
+          <Meta>
+            <template #avatar>
+              <Avatar shape="square"> <img alt="avatar" :src="item.avatar" /></Avatar>
+            </template>
+            <template #title>
+              {{ item.title }}
+            </template>
+            <template #description>
+              {{ item.description }}
+            </template>
+          </Meta>
+          <!-- <template #actions>ss</template> -->
+        </Item>
+      </template>
+    </List>
   </Card>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
-import { Card, Avatar, Button } from '@arco-design/web-vue';
+import { Card, Avatar, Button, List } from '@arco-design/web-vue';
 
+const { Item } = List;
+const { Meta } = Item;
 export default defineComponent({
   components: {
     Card,
     Avatar,
     Button,
+    List,
+    Meta,
   },
   setup() {
     const data = ref([
@@ -47,6 +69,7 @@ export default defineComponent({
 
 <style lang="less" scoped>
 .team-info {
+  margin-bottom: 12px;
   .item {
     padding: 10px;
     display: flex;

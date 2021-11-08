@@ -22,6 +22,7 @@ export default defineComponent({
 
 <style lang="less" scoped>
 .content {
-  // padding: 20px;
+  height: calc(100vh - 61px);
+  overflow: scroll;
 }
 </style>

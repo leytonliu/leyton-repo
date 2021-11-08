@@ -1,9 +1,9 @@
 <template>
-  <Layout>
+  <Layout class="layout">
     <LoadingBar ref="loadingBarRef" />
-    <Navbar />
+    <Navbar class="layout-navbar" />
     <Layout>
-      <Sider class="sider" :width="menuWidth">
+      <Sider class="layout-sider" :width="menuWidth">
         <Menu
           class="menu"
           :default-open-keys="['/dashboard']"
@@ -77,12 +77,9 @@ export default defineComponent({
     const onMenuClick = (route: RouteRecordRaw) => {
       console.log(route);
       loadingBarRef.value?.loading();
-      router.push({
-        name: route.name,
-      });
-      setTimeout(() => {
+      router.push({ name: route.name }).then(() => {
         loadingBarRef.value?.success();
-      }, 300);
+      });
     };
 
     const onCollapse = (collapse: boolean) => {
@@ -102,11 +99,21 @@ export default defineComponent({
 </script>
 
 <style lang="less" scoped>
-.sider {
-  height: calc(100vh - 61px);
-  width: auto;
-  .menu {
-    height: 100%;
+.layout {
+  width: 100%;
+  height: 100%;
+  // .layout-navbar {
+  //   position: fixed;
+  //   top: 0;
+  //   left: 0;
+  // }
+  .layout-sider {
+    height: calc(100vh - 61px);
+    width: auto;
+    overflow-y: auto;
+    .menu {
+      height: 100%;
+    }
   }
 }
 </style>
