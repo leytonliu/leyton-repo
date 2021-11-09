@@ -53,8 +53,6 @@ export default defineComponent({
       }
     };
 
-    console.log(getLocale());
-
     return {
       // locale,
       getLocale,

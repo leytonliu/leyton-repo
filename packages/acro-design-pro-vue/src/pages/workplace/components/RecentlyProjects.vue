@@ -24,8 +24,6 @@ export default defineComponent({
   },
   setup() {
     const { t } = useI18n();
-    console.log(t('workplace.allProject'));
-    console.log(t('workplace.test.stability'));
 
     return {
       t,

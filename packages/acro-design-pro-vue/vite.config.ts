@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import styleImport from 'vite-plugin-style-import';
 import path from 'path';
+import themeColor from './settings.json';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -30,7 +31,7 @@ export default defineConfig({
     preprocessorOptions: {
       less: {
         modifyVars: {
-          // 'arcoblue-6': '#f85959',
+          ...(themeColor ? { 'arcoblue-6': themeColor } : {}),
         },
         javascriptEnabled: true,
       },

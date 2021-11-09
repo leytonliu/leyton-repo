@@ -10,7 +10,7 @@
           <Statistic title="余额（元）" :value="392.52" :precision="2">
             <template #prefix><icon-home /></template>
           </Statistic>
-          <Statistic title="待支付" :value="0" :precision="2">
+          <Statistic :title="$t('workplace.order.pending')" :value="0" :precision="2">
             <template #prefix><icon-home /></template>
           </Statistic>
           <Statistic title="待续费订单" :value="1">
@@ -27,6 +27,7 @@ import { defineComponent } from 'vue';
 import { Grid, Space, Typography, Statistic } from '@arco-design/web-vue';
 const { Row, Col } = Grid;
 const { Title, Text } = Typography;
+
 export default defineComponent({
   components: {
     Row,

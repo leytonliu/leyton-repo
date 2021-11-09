@@ -2,9 +2,10 @@ import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router';
 import ArcoVueIcon from '@arco-design/web-vue/es/icon';
-import { createI18n } from 'vue-i18n';
+import { createI18n, useI18n } from 'vue-i18n';
 import zhCN from './locale/zh-CN';
 import enUS from './locale/en-US';
+import './mock';
 
 const messages = {
   'en-US': enUS,
@@ -18,4 +19,10 @@ const i18n = createI18n({
   messages: messages,
 });
 
-createApp(App).use(router).use(i18n).use(ArcoVueIcon).mount('#app');
+const app = createApp(App);
+
+// app.config.globalProperties.$t = t;
+
+app.use(router).use(i18n).use(ArcoVueIcon).mount('#app');
+
+console.log(app);

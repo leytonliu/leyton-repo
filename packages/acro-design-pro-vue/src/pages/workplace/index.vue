@@ -7,22 +7,22 @@
           <Col :span="24" class="panel">
             <Row>
               <Col :span="6">
-                <Statistic title="转码时长" :value="3735">
-                  <template #suffix>分钟</template>
+                <Statistic :title="t('workplace.encodeTime')" :value="3735">
+                  <template #suffix>{{ t('workplace.minute') }}</template>
                 </Statistic>
               </Col>
               <Col :span="6">
-                <Statistic title="上行流量" :value="124567" suffix="GB">
+                <Statistic :title="t('workplace.upstream')" :value="124567" suffix="GB">
                   <template #suffix>GB</template>
                 </Statistic>
               </Col>
               <Col :span="6">
-                <Statistic title="下行流量" :value="24335" suffix="GB">
+                <Statistic :title="t('workplace.downstream')" :value="24335" suffix="GB">
                   <template #suffix>GB</template>
                 </Statistic>
               </Col>
               <Col :span="6">
-                <Statistic title="总览" :value="145652" suffix="GB">
+                <Statistic :title="t('workplace.overview')" :value="145652" suffix="GB">
                   <template #suffix>GB</template>
                 </Statistic>
               </Col>
@@ -66,10 +66,15 @@ import QuickOperation from './components/QuickOperation.vue';
 import Carousel from './components/Carousel.vue';
 import Docs from './components/Docs.vue';
 const { Row, Col } = Grid;
+import axios from 'axios';
 
 export default defineComponent({
   setup() {
     const { t } = useI18n();
+
+    axios.get('/api/user/userInfo').then((res) => {
+      console.log(res);
+    });
     return {
       t,
     };

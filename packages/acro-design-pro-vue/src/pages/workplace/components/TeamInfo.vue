@@ -5,20 +5,17 @@
     </div> -->
     <List :data="data" :bordered="false">
       <template #item="{ item }">
-        <Item>
-          <Meta>
-            <template #avatar>
-              <Avatar shape="square"> <img alt="avatar" :src="item.avatar" /></Avatar>
-            </template>
-            <template #title>
-              {{ item.title }}
-            </template>
-            <template #description>
-              {{ item.description }}
-            </template>
-          </Meta>
-          <!-- <template #actions>ss</template> -->
-        </Item>
+        <Meta>
+          <template #avatar>
+            <Avatar shape="square"> <img alt="avatar" :src="item.avatar" /></Avatar>
+          </template>
+          <template #title>
+            {{ item.title }}
+          </template>
+          <template #description>
+            {{ item.description }}
+          </template>
+        </Meta>
       </template>
     </List>
   </Card>
