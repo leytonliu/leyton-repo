@@ -10,7 +10,7 @@
           <Statistic title="余额（元）" :value="392.52" :precision="2">
             <template #prefix><icon-home /></template>
           </Statistic>
-          <Statistic :title="$t('workplace.order.pending')" :value="0" :precision="2">
+          <Statistic title="待支付（元）" :value="0" :precision="2">
             <template #prefix><icon-home /></template>
           </Statistic>
           <Statistic title="待续费订单" :value="1">

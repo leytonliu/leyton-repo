@@ -11,6 +11,8 @@ import { ConfigProvider } from '@arco-design/web-vue';
 import zhCN from './locale/zh-CN';
 import enUS from './locale/en-US';
 
+import groupBy from 'lodash/groupBy';
+
 export default defineComponent({
   name: 'App',
   components: {
@@ -22,25 +24,6 @@ export default defineComponent({
     if (!localStorage.getItem('arco-lang')) {
       localStorage.setItem('arco-lang', localeName);
     }
-
-    // const [locale, setLocale] = useState();
-
-    // function fetchLocale(ln?: string) {
-    //   const localePath = `./locale/${ln || localeName}`;
-    //   console.log('localePath', localePath);
-
-    //   // const locale = (await import(`./locale/${ln || localeName}`)).default; // webpack
-    //   const locale = import.meta.glob(`./locale/${ln || localeName}`); // vite
-    //   console.log('locale', locale);
-
-    //   setLocale(locale);
-    // }
-
-    // fetchLocale();
-    // onMounted(async () => {
-    //   console.log(await fetchLocale());
-    //   console.log(locale.value);
-    // });
 
     const getLocale = () => {
       switch (localeName) {
@@ -68,7 +51,8 @@ export default defineComponent({
     Lucida Grande, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; */
-  font-family: Inter, -apple-system, BlinkMacSystemFont, PingFang SC, Hiragino Sans GB, noto sans,
-    Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, PingFang SC,
+    Hiragino Sans GB, noto sans, Microsoft YaHei, Helvetica Neue, Helvetica,
+    Arial, sans-serif;
 }
 </style>

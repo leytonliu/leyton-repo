@@ -6,6 +6,7 @@ import { createI18n, useI18n } from 'vue-i18n';
 import zhCN from './locale/zh-CN';
 import enUS from './locale/en-US';
 import './mock';
+import './style/index.less';
 
 const messages = {
   'en-US': enUS,
